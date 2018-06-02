@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+	<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+	<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+	<style type="text/css">
+		input, textarea, fieldset ,button { outline: none; resize: none; border: 0;}
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button {
+			-webkit-appearance: none !important;
+			margin: 0;
+		}
+		.radio{
+			color: #606266;
+			font-weight: 500;
+			line-height: 1;
+			position: relative;
+			cursor: pointer;
+			display: inline-block;
+			white-space: nowrap;
+			outline: none;
+			font-size: 14px;
+		}
+		.radio__input{
+			white-space: nowrap;
+			cursor: pointer;
+			outline: none;
+			display: inline-block;
+			line-height: 1;
+			position: relative;
+			vertical-align: middle;
+		}
+		.radio__original{
+			opacity: 0;
+			outline: none;
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: 0;
+		}
+		.radio__inner{
+			border: 1px solid #dcdfe6;
+			border-radius: 100%;
+			width: 14px;
+			height: 14px;
+			background-color: #fff;
+			position: relative;
+			cursor: pointer;
+			display: inline-block;
+			box-sizing: border-box;
+		}
+		.radio__inner::after{
+			width: 4px;
+			height: 4px;
+			border-radius: 100%;
+			background-color: #fff;
+			content: "";
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%) scale(0);
+			transition: transform .15s ease-in;
+		}
+		.radio__input.is-checked .radio__inner:after {
+			transform: translate(-50%,-50%) scale(1);
+		}
+		.radio__input.is-checked .radio__inner {
+			border-color: #409eff;
+			background: #409eff;
+		}
+	</style>
+</head>
+
+<body>
+	<label for="test" class="radio">
+		<span class="radio__input is-checked">
+			<span class="radio__inner"></span>
+			<input class="radio__original" id="test" type="radio" name="aaa">
+		</span>
+		<span>123</span>
+	</label>
+	<label for="test2" class="radio">
+		<span class="radio__input">
+			<span class="radio__inner"></span>
+			<input class="radio__original" id="test2" type="radio" name="aaa">
+		</span>
+		<span>456</span>
+	</label>
+</body>
+
+</html>
+
+<script type="text/javascript">
+	// $(".tab li").eq($(this).index()).addClass("cur").siblings().removeClass('cur');
+    // $("div").hide().eq($(this).index()).show();
+
+	$('.radio__input').on('click',function(e){
+		$('.radio__input').removeClass('is-checked');
+		$(this).addClass("is-checked")
+	})
+
+
+</script>
