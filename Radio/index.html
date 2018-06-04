@@ -45,10 +45,10 @@
 			margin: 0;
 		}
 		.radio__inner{
-			border: 1px solid #dcdfe6;
+			border: 2px solid #ccc;
 			border-radius: 100%;
-			width: 14px;
-			height: 14px;
+			width: 18px;
+			height: 18px;
 			background-color: #fff;
 			position: relative;
 			cursor: pointer;
@@ -56,10 +56,10 @@
 			box-sizing: border-box;
 		}
 		.radio__inner::after{
-			width: 4px;
-			height: 4px;
+			width: 8px;
+			height: 8px;
 			border-radius: 100%;
-			background-color: #fff;
+			background-color: #009688;
 			content: "";
 			position: absolute;
 			left: 50%;
@@ -71,8 +71,9 @@
 			transform: translate(-50%,-50%) scale(1);
 		}
 		.radio__input.is-checked .radio__inner {
-			border-color: #409eff;
-			background: #409eff;
+			border-color: #009688;
+			background: #fff;
+			border: 2px solid #009688;
 		}
 	</style>
 </head>
